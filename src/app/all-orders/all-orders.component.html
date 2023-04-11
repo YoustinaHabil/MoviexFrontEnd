@@ -1,0 +1,116 @@
+<style>
+  /* The container */
+  .contain {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Hide the browser's default checkbox */
+  .contain input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: -18px;
+    left: 20px;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .contain:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  /* When the checkbox is checked, add a blue background */
+  .contain input:checked ~ .checkmark {
+    background-color: #21f321;
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the checkmark when checked */
+  .contain input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+  .contain .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  </style>
+
+
+  <!-- <div *ngFor="let item of cartItems">
+    <button (click)="deleteFromCart(item.cartItemId,item.movie.id)" >Delete</button> -->
+  <h3>All Orders</h3>
+  <hr>
+    <table class="table table-dark table-hover">
+      <thead>
+        <tr>
+
+        <!-- <th scope="col">cart Item Id</th> -->
+        <!-- <th scope="col">movie id</th> -->
+        <th scope="col">Complete</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Movie Name</th>
+        <th scope="col">Price Ticket</th>
+
+        <!-- <th scope="col">Delete</th> -->
+
+      </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let item of orders;let CurrentIndex=index">
+      <td>
+
+     <label class="contain">
+         <input type="checkbox"  >
+        <span class="checkmark"></span></label>
+      </td>
+      <td>{{item.user.userName}}</td>
+      <td>{{item.movie.name}}</td>
+      <td>{{item.movie.price}}</td>
+      <!-- <td>{{ item.movie.quantity}}</td> -->
+
+
+
+    </tr>
+  </tbody>
+    </table>
+
+    <!-- </tr> -->
+
+  <!-- </div> -->
+
+
+  <br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

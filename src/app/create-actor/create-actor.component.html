@@ -1,0 +1,25 @@
+
+                          <br><br><br><br><br><br>
+                         <div class="container mt-3">
+                          <form [formGroup]="actorForm" (ngSubmit)="onSubmit()">
+                              <div class="form-group center">
+                                  <label style="color: blue;font-family: bold; font-size: 20px;" for=" ProfilePictureURL"> ProfilePictureURL</label>
+                                  <input type="text" class="form-control" formControlName="ProfilePictureURL">
+                                  
+                                </div>
+                            <div class="form-group center">
+                              <label style="color: blue;font-family: bold; font-size: 20px;" for="name">Name</label>
+                              <input type="text" class="form-control" formControlName="FullName">
+                              
+                            </div>
+                            <div class="form-group center">
+                              <label style="color: blue;font-family: bold; font-size: 20px;" for="gender">Bio</label>
+                              <input type="text" class="form-control" formControlName="Bio">
+                             
+                            </div>
+                            <button style="margin-left: 400px;" type="submit" class="button">Submit</button>
+                            <button (click)="BacktoActors()" style="margin-left: 10px;" class="button"> Back To Actors</button>
+<br><br><br><br><br><br><br>
+                          </form>
+                        </div>
+                        <router-outlet></router-outlet>  

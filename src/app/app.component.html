@@ -1,0 +1,75 @@
+<style>
+  body {
+
+
+
+      background: url('../Images/body-bg.gif');
+      background: black;
+      font-family: "Roboto", sans-serif;
+      color: white;
+
+  }
+
+  .logo {
+      margin-right: 10px;
+  }
+
+
+</style>
+<body>
+  <!--Responsive navbar-->
+   <nav class="navbar navbar-expand-lg ">
+      <div class="container">
+           <a class="navbar-brand" href="#">
+            <img src="../assets/Images/logo.png" class="logo" />
+              Moviex
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item" *ngIf="!isAuthenticated">
+                  <a class="nav-link " aria-current="page" routerLink="/login" routerLinkActive="active" style="font-size: 24px; margin-right: 300px; margin-left: 30px;">Login</a>
+                </li>
+                <li class="nav-item" *ngIf="!isAuthenticated">
+                  <a class="nav-link" routerLink="/register" routerLinkActive="active" style="font-size: 24px; margin-right: 300px;">Register</a>
+                </li>
+
+                  <li class="nav-item" *ngIf="isAuthenticated"> <a class="nav-link " routerLink="/Movie"  style="margin-left:50px"><i class="bi bi-film"></i> Movies</a></li>
+
+
+
+                  <li class="nav-item" *ngIf="isAuthenticated&&isAdmin"> <a class="nav-link " routerLink="/Cinema" style="margin-left:50px"><i class="bi bi-camera-reels" ></i> Cinemas</a></li>
+                  <li class="nav-item" *ngIf="isAuthenticated&&isAdmin"> <a class="nav-link "  routerLink="/Producer"   style="margin-left:50px" ><i class="bi bi-headset" ></i> Producers</a></li>
+                  <li class="nav-item" *ngIf="isAuthenticated&&isAdmin"> <a class="nav-link "  routerLink="/Actor" style="margin-left:50px"><i class="bi bi-person-square" ></i> Actors</a></li>
+                  <li class="nav-item" *ngIf="isAuthenticated&&!isAdmin"> <a class="nav-link "  routerLink="/order" style="margin-left:50px"><i class="bi bi-person-square"></i>My Orders</a></li>
+                  <li class="nav-item" *ngIf="isAuthenticated&&isAdmin"> <a class="nav-link "  routerLink="/all-order" style="margin-left:50px"><i class="bi bi-person-square"></i>All Orders</a></li>
+
+                  <li class="nav-item" *ngIf="isAuthenticated" (click)="logout()">
+                    <a class="nav-link"  routerLinkActive="active" style="font-size: 20px; margin-left: 170px;">logout</a>
+                  </li>
+              </ul>
+              <!-- <form class="form-inline my-2 my-lg-0" asp-controller="Movies" asp-action="Filter" style="padding-right: 15px;margin-left:50px">
+                  <input name="searchString" type="text" class="form-control" placeholder="Search for a movie..." aria-label="Recipient's username" aria-describedby="button-addon2" style="margin-left:50px;width:200px" >
+
+                  </form> -->
+              <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit" asp-controller="Movies" asp-action="Filter" style="margin-right:30px"><i class="bi bi-search"></i></button> -->
+
+
+
+
+
+
+          </div>
+      </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+  <footer class="bg-dark text-center text-lg-start text-white">
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+          © 2023 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">Moviex.com</a>
+      </div>
+      <!-- Copyright -->
+  </footer>
+

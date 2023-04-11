@@ -1,0 +1,48 @@
+<br>
+<br>
+<br>
+<br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br>
+<style>
+
+    h1 {
+  color: rgb(28, 5, 119);
+  padding: auto;
+  margin-left: 90px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+text-align: center;
+margin-right: 120px;
+  }
+  </style>
+
+
+
+<div class="container center" >
+  <h1 >Please Login</h1>
+  <hr>
+    <div class="row g-3" [formGroup]="loginForm">
+        <div class="col-md-6">
+          <!-- <form method="post"> -->
+            <label style="color: rgb(15, 15, 16);font-size: 22px;" for="inputEmail4" class="form-label">Email</label>
+            <input type="email" formControlName="Email" [class.is-invalid]="Email?.invalid && Email?.touched" class="form-control" placeholder="Email Address">
+            <div *ngIf="Email?.invalid && Email?.touched">
+              <small class="text-danger" *ngIf="Email?.errors?.['required']">Email name is required</small>
+              <small class="text-danger" *ngIf="Email?.errors?.['pattern']">Email must be in aa@bbb.com format</small>
+            </div>
+        </div>
+          <div class="col-md-6">
+            <label style="color: rgb(15, 15, 16); font-size: 22px;" for="inputPassword4" class="form-label">Password</label>
+            <input type="password" formControlName="Password" [class.is-invalid]="Password?.invalid && Password?.touched" class="form-control" placeholder="Password">
+            <div *ngIf="Password?.invalid && Password?.touched">
+              <small class="text-danger" *ngIf="Password?.errors?.['required']">Password is required</small>
+              <small class="text-danger" *ngIf="Password?.errors?.['pattern']">Password format is invalid</small>
+            </div>
+          </div>
+          <div class="col-6" class="form-group">
+            <!-- <input  type="submit"  style="font-size: 20px;" [disabled]="registerForm.invalid" (click)="register()"> -->
+<br>
+              <input style="width:20px;height: 60px;" type="submit" class="btn-outline-success" style="font-size: 20px;" [disabled]="loginForm.invalid" (click)="login()">
+              </div>
+      </div>
+    <!-- </div> -->

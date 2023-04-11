@@ -1,0 +1,72 @@
+<br>
+<br>
+<br>
+
+<style>
+
+    h1 {
+  color: rgb(5, 119, 43);
+  padding: auto;
+  margin-left: 90px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+  }
+  h1 {
+  color: rgb(28, 5, 119);
+  padding: auto;
+  margin-left: 210px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+  }
+  </style>
+<p style="color:red;font-size: x-large;text-shadow:10px 5px 5px grey;margin-left: 400px;">{{error}}</p>
+<p style="color:green;font-size: x-large;text-shadow:10px 5px 5px grey;margin-left: 400px;">{{succes}}</p>
+<div class="container" >
+  <h1>Please Register</h1>
+  <hr>
+    <div class="row g-3" [formGroup]="registerForm">
+    <div class="col-6" >
+      <label style="color: rgb(15, 15, 16);" for="fname" class="form-label">First Name</label>
+      <input formControlName="FirstName" type="text" [class.is-invalid]="FirstName?.invalid && FirstName?.touched" class="form-control" placeholder="First name" aria-label="First name">
+      <div *ngIf="FirstName?.invalid && FirstName?.touched">
+        <small class="text-danger" *ngIf="FirstName?.errors?.['required']">First name is required</small>
+        <small class="text-danger" *ngIf="FirstName?.errors?.['pattern']">First name should be at least 3 characters</small>
+      </div>
+    </div>
+    <div class="col-6">
+      <label style="color: rgb(15, 15, 16);" for="lname" class="form-label">Last Name</label>
+      <input type="text" formControlName="LastName" class="form-control" [class.is-invalid]="LastName?.invalid && LastName?.touched" placeholder="Last name" aria-label="Last name">
+      <div *ngIf="LastName?.invalid && LastName?.touched">
+        <small class="text-danger" *ngIf="LastName?.errors?.['required']">Last name is required</small>
+        <small class="text-danger" *ngIf="LastName?.errors?.['pattern']">Last name should be at least 3 characters</small>
+      </div>
+    </div>
+    <div class="col-12">
+        <label style="color: rgb(15, 15, 16);" for="user" class="form-label">User Name</label>
+        <input type="text" formControlName="userName" class="form-control" [class.is-invalid]="userName?.invalid && userName?.touched" formControlName="userName" placeholder="User name" aria-label="User name">
+        <div *ngIf="userName?.invalid && userName?.touched">
+            <small class="text-danger" *ngIf="userName?.errors?.['required']">User name is required</small>
+            <small class="text-danger" *ngIf="userName?.errors?.['pattern']">User name should be at least 3 characters</small>
+          </div>
+    </div>
+        <div class="col-md-12">
+          <label style="color: rgb(15, 15, 16);" for="inputEmail4" class="form-label">Email</label>
+          <input type="email" formControlName="Email" [class.is-invalid]="Email?.invalid && Email?.touched" class="form-control" placeholder="Email Address">
+          <div *ngIf="Email?.invalid && Email?.touched">
+            <small class="text-danger" *ngIf="Email?.errors?.['required']">Email name is required</small>
+            <small class="text-danger" *ngIf="Email?.errors?.['pattern']">Email must be in aa@bbb.com format</small>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <label style="color: rgb(15, 15, 16);" for="inputPassword4" class="form-label">Password</label>
+          <input type="password" formControlName="Password" [class.is-invalid]="Password?.invalid && Password?.touched" class="form-control" placeholder="Password">
+          <div *ngIf="Password?.invalid && Password?.touched">
+            <small class="text-danger" *ngIf="Password?.errors?.['required']">Password is required</small>
+          </div>
+        </div>
+        <div class="col-6" class="form-group">
+          <input  type="submit"  style="font-size: 20px;" [disabled]="registerForm.invalid" (click)="register()" >
+
+            </div>
+    </div>
+  </div>

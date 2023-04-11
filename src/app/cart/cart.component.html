@@ -1,0 +1,27 @@
+
+<!-- <div *ngFor="let item of cartItems">
+  <button (click)="deleteFromCart(item.cartItemId,item.movie.id)" >Delete</button> -->
+<h3>Your Orders</h3>
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+
+      <!-- <th scope="col">cart Item Id</th> -->
+      <th scope="col">Quantity</th>
+      <th scope="col">Movie Name</th>
+      <th scope="col">Movie Price</th>
+      <!-- <th scope="col">Delete</th> -->
+
+    </tr>
+  <tr *ngFor="let item of cartItems;let CurrentIndex=index">
+<!--
+    <td>{{item.cartItemId}}</td> -->
+    <td>{{ item.quantity}}</td>
+    <td>{{ item.movie.name}}</td>
+    <td>{{ item.movie.price}}</td>
+    <button style="color: red;" (click)="deleteFromCart(item.cartItemId,item.movie.id,CurrentIndex)" style="color: aliceblue;" >Delete</button>
+    <button (click)="getTicket(item.cartItemId)" style="color: aliceblue;">Your Ticket</button>
+ <!-- {{item.cartItemId}} -->
+  </tr>
+
+<!-- </div> -->

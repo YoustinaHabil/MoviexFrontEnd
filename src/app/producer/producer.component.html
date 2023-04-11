@@ -1,0 +1,38 @@
+
+  <table class="center">
+    
+      <tr>
+      <th ></th>
+      <th ></th>
+      <th ></th>
+
+    </tr>
+    
+      <tr *ngFor="let item of Producers;let CurrentIndex=index">
+        <td>{{item.FullName}}</td>
+        <td><img class="rounded-circle" src= "{{item.ProfilePictureURL}}" style="width: 150px; height: 150px"/></td>
+       <br>
+        <td>{{ item.Bio }}</td>
+        <td class="align-middle">
+
+          <!-- <a class="button" (click)="updateDetails(item.Id)" *ngIf="isAdmin" ><i class="bi bi-pencil-square" ></i> Edit</a> -->
+          <button  (click)="updateDetails(item.Id)" *ngIf="isAdmin"  type="submit" class="button2">Edit</button>
+          <button  (click)="viewDetails(item.Id)"type="submit" class="button">Details</button>
+          <button  (click)="delete(CurrentIndex)" *ngIf="isAdmin"  type="submit" class="button1">Delete</button>
+  </td>
+      </tr>
+    
+  </table>
+  <div class="col-md-3">
+ 
+    <a  routerLink= "/create-producer" *ngIf="isAdmin" style="width: 200px;height: 60px; font-size: 12px;padding: 20px; margin: auto;" href="#"  type="button"  class="btn-danger"  class="animated-button1">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Add New Producer
+    </a>
+
+
+    <!-- <button  routerLink= "/create-producer"  type="button"  class="btn-danger" style="width: 100px; height: 40px;" *ngIf="isAdmin" >Add</button> -->
+  </div>

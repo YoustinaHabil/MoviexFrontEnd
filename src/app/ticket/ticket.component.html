@@ -1,0 +1,66 @@
+<style>
+  .card
+  {
+      width: 60rem;
+      color: black;
+      position: relative;
+      margin-top: 270px;
+      align-self: center;
+      top: 50%;
+
+      font-size: 30px;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .header
+  {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: left;
+      background-color: #f5ca09f6;
+      padding: 10px;
+      border-radius: 5px;
+  }
+</style>
+
+
+  <div class="card" style="float: left;">
+  <div class="header">
+      <p style="margin-left:370px;">Moviex Ticket</p>
+  </div>
+
+  <div class="card-body">
+
+
+  <div  class="movie-info">
+    <div>  <img src="{{Movie.ImageURL}}" class="poster"style=" width:350px;height: 545px; float:right" /> </div>
+
+    <div  style="margin-left: 10px;padding: 5px 0;">Movie: &nbsp;  {{ Movie.Name }}</div>
+    <div  style="margin-left: 10px;padding: 5px 0;">Price:&nbsp;  {{ Movie.Price }}$</div>
+    <div  style="margin-left: 10px;padding: 5px 0;">Cinema:&nbsp;  {{ cinema.Name }}</div>
+    <div  style="margin-left: 10px;padding: 5px 0;">Quantity: &nbsp;  {{ quantaty }}</div>
+     <div style="margin-left: 10px;padding: 5px 0;">Reservation Date: &nbsp;  {{ movieDate | date:'dd MMM yyyy' }}</div> <div style="margin-left: 10px;padding: 5px 0;"> Reservation Time: &nbsp; {{ movieDate | date:'hh:mm a' }} </div>
+     <div style="margin-left: 10px;padding: 5px 0;">Expiry Date: &nbsp;  {{ Movie.EndDate| date:'dd MMM yyyy' }}</div>  <div style="margin-left: 10px;padding: 5px 0;"> Expiry Time: &nbsp; {{ Movie.EndDate | date:'hh:mm a' }}</div>
+     <br>
+
+
+     <div style="text-align: left;font-weight:lighter; font-style: italic; background-color: #eeece3f6; font-size: 35px;" > Ticket Code: {{concatenatedValue}}</div>
+    </div>
+
+
+
+  </div>
+
+  </div>
+
+
+<div class="col-md-6">
+
+<a (click)="goBack()" class="btn btn-warning">Back To Movies</a>
+<button (click)="BacktoOrders()" class="btn btn-warning"  style="margin-left: 10px;" >Back To Orders</button>
+
+</div>

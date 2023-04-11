@@ -1,0 +1,53 @@
+
+                    
+
+
+
+
+<!-- 
+                         <div class="container mt-3">
+                            <form [formGroup]="cinemaForm" (ngSubmit)="onSubmit()">
+                                <div class="form-group">
+                                    <label for=" ProfilePictureURL"> Logo</label>
+                                    <input type="text" class="form-control" formControlName="Logo">
+                                    
+                                  </div>
+                              <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" formControlName="Name">
+                                
+                              </div>
+                              <div class="form-group">
+                                <label for="Description">Description</label>
+                                <input type="text" class="form-control" formControlName="Description">
+                               
+                              </div>
+                              
+                              <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                          </div>
+                          <router-outlet></router-outlet>   -->
+                          <br><br><br><br><br><br>
+                          <div class="container mt-3">
+                            <form [formGroup]="cinemaForm" (ngSubmit)="onSubmit()">
+                                <div class="form-group center">
+                                    <label style="color: blue;font-family: bold; font-size: 20px;" for=" ProfilePictureURL"> Logo</label>
+                                    <input type="text" class="form-control" formControlName="Logo">
+                                    
+                                  </div>
+                              <div class="form-group center">
+                                <label style="color: blue;font-family: bold; font-size: 20px;" for="name">Name</label>
+                                <input type="text" class="form-control" formControlName="Name">
+                                
+                              </div>
+                              <div class="form-group center">
+                                <label style="color: blue;font-family: bold; font-size: 20px;" for="Description">Description</label>
+                                <input type="text" class="form-control" formControlName="Description">
+                               
+                              </div>
+                              <button style="margin-left: 400px;" type="submit" class="button">Submit</button>
+                              <button (click)="Backtocenimas()" class="button" style="margin-left: 10px;"> Back To Cenimas</button>
+                              <br><br><br><br><br><br><br>
+                            </form>
+                          </div>
+                          <router-outlet></router-outlet>  

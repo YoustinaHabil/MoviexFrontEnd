@@ -1,0 +1,59 @@
+<div class="container mt-5">
+  <div class="row justify-content-center" >
+    <div class="col-md-6">
+      <div class="card" style="background-color: rgb(145, 173, 229);" >
+        <div class="card-body" style="border-style:ridge">
+          <h1  class="card-title text-center mb-4" style="text-shadow:5px 5px 5px gray;">Complete Your Order</h1>
+          <hr>
+          <p style="color: blue; font-size: 20px;" class="card-text mb-3 text-white" style="font-size:26px;">Movie Name: {{Movie.Name}}</p>
+          <p style="color: blue;font-size: 20px;" class="card-text mb-3 text-white" style="font-size:26px;">Price: {{Movie.Price}} $</p>
+
+
+          <div style="font-size:24px;" [formGroup]="paymentForm">
+            <div class="mb-3">
+              <label style="color: blue;font-family: bold; font-size: 20px;" for="cardNumber">Card Number</label>
+              <input type="number" formControlName="cardNumber" class="form-control" id="cardNumber">
+              <div *ngIf="cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)">
+                <small class="text-danger" *ngIf="cardNumber.errors.required">Card number is required.</small>
+                <small class="text-danger" *ngIf="cardNumber.errors.pattern">Invalid card number format.</small>
+              </div>
+          <br>
+            </div>
+            <div class="mb-3">
+              <label style="color: blue;font-family: bold; font-size: 20px;" for="nameOnCard">Name on Card</label>
+              <input type="text" formControlName="nameOnCard" class="form-control" id="nameOnCard">
+              <div *ngIf="nameOnCard.invalid && (nameOnCard.dirty || nameOnCard.touched)">
+                <small class="text-danger" *ngIf="nameOnCard.errors.required">Name on card is required.</small>
+                <small class="text-danger" *ngIf="nameOnCard.errors.pattern">Invalid name format.</small>
+              </div>
+          <br>
+              <div class="mb-3">
+                <label style="color: blue;font-family: bold; font-size: 20px;" for="expiryDate">Expiry Date</label>
+                <input type="text" formControlName="expiryDate" class="form-control" id="expiryDate">
+                <div *ngIf="expiryDate.invalid && (expiryDate.dirty || expiryDate.touched)">
+                  <small class="text-danger" *ngIf="expiryDate.errors.required">Expiry date is required.</small>
+                  <small class="text-danger" *ngIf="expiryDate.errors.pattern">Invalid expiry date format. Please use MM/YYYY.</small>
+                </div>
+                <br>
+                <div class="mb-3">
+                  <label style="color: blue;font-family: bold; font-size: 20px;" for="securityCode">Security Code</label>
+                  <input type="text" formControlName="securityCode" class="form-control" id="securityCode">
+                  <div *ngIf="securityCode.invalid && (securityCode.dirty || securityCode.touched)">
+                    <small class="text-danger" *ngIf="securityCode.errors.required">Security code is required.</small>
+                    <small class="text-danger" *ngIf="securityCode.errors.pattern">Invalid security code format. Please use a 3-4 digit number.</small>
+                  </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" (click)="onAddToCart(Movie.Id)" [disabled]="isExpired(Movie) || paymentForm.invalid">
+            <!-- <button class="button"  (click)="onAddToCart(Movie.Id)" [disabled]="isExpired(Movie)" (click)="goBack()"> -->
+              Complete payment {{Movie.Price}} $ </button>
+
+            <!-- <button class="btn btn-primary" (click)="onAddToCart(Movie.Id)" [disabled]="isExpired(Movie)" (click)="goBack()">
+              <i class="bi bi-cart-plus"></i> Complete payment {{Movie.Price}} $
+            </button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<!-- <style>
+body{
+    color: white;
+
+}
+</style>
+
+
+<form #updateProductForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Full Name:</label>
+      <input type="text" class="form-control" id="name" name="FullName" [(ngModel)]=" Actor.FullName" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea class="form-control" id="description" name="Bio" [(ngModel)]=" Actor.Bio" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="price">ProfilePictureURL:</label>
+      <input type="text" class="form-control" id="ProfilePictureURL" name="ProfilePictureURL" [(ngModel)]=" Actor.ProfilePictureURL" required>
+    </div>
+    
+    
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form> -->
+  <br><br><br><br>
+  <style>
+    body{
+        color: white;
+    
+    }
+    </style>
+    
+    
+    <form #updateProductForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group center">
+          <label style="color: blue;font-family: bold; font-size: 20px;" for="name">Full Name:</label>
+          <input type="text" class="form-control" id="name" name="FullName" [(ngModel)]=" Actor.FullName" required>
+        </div>
+        <div class="form-group center">
+          <label style="color: blue;font-family: bold; font-size: 20px;" for="description">Description:</label>
+          <textarea class="form-control" id="description" name="Bio" [(ngModel)]=" Actor.Bio" required></textarea>
+        </div>
+        <div class="form-group center">
+          <label style="color: blue;font-family: bold; font-size: 20px;" for="price">ProfilePictureURL:</label>
+          <input type="text" class="form-control" id="ProfilePictureURL" name="ProfilePictureURL" [(ngModel)]=" Actor.ProfilePictureURL" required>
+        </div>
+        <br>
+        <button style="margin-left: 350px;" type="submit" class="button">Update</button>
+<br><br><br><br><br><br><br><br><br>
+        <!-- <button type="submit" class="btn btn-primary">Update</button> -->
+      </form>
+    

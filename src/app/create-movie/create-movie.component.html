@@ -1,0 +1,62 @@
+<div class="container mt-3">
+    <form [formGroup]="MovieForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for=" Name"> Name</label>
+            <input type="text" class="form-control" formControlName="Name">
+
+          </div>
+      <div class="form-group">
+        <label for="name">Description</label>
+        <input type="text" class="form-control" formControlName="Description">
+
+      </div>
+      <div class="form-group">
+        <label for="gender">Price</label>
+        <input type="number" class="form-control" formControlName="Price">
+      </div>
+      <div class="form-group">
+        <label for="imageURL">Image URL</label>
+        <input type="text" class="form-control"  formControlName="ImageURL" name="ImageURL" >
+      </div>
+      <div class="form-group">
+        <label for="startDate">Start Date</label>
+        <input type="date" class="form-control"formControlName="StartDate" name="StartDate" >
+      <div class="form-group">
+        <label for="endDate">End Date</label>
+        <input type="date" class="form-control" formControlName="EndDate" name="EndDate" >
+      </div>
+      <div class="form-group">
+        <label for="movieCategory">Category</label>
+        <select class="form-control"formControlName="MovieCategory" name="MovieCategory" >
+          <option *ngFor="let category of categories" [value]="category.value">{{category.name}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="ActorIds">Actors</label>
+        <select multiple class="form-control"formControlName="ActorIds" name="ActorIds" style="height:100px;">
+          <option *ngFor="let actor of Actors" [value]="actor.Id">{{actor.FullName}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="CinemaId">Cinema</label>
+        <select class="form-control"formControlName="CinemaId" name="CinemaId" >
+          <option *ngFor="let cinema of cinema" [value]="cinema.Id">{{cinema.Name}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="ProducerId">Producer</label>
+        <select class="form-control"formControlName="ProducerId" name="ProducerId" >
+          <option *ngFor="let producer of producers" [value]="producer.Id">{{producer.FullName}}</option>
+        </select>
+      </div>
+
+      </div>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <router-outlet></router-outlet>
+
+
+

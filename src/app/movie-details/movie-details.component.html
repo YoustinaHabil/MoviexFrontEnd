@@ -1,0 +1,433 @@
+<!-- <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+     body {
+           
+        background: url('../Images/body-bg.gif');
+        background:black;
+        color:black;
+        font-family: "Roboto", sans-serif;
+      
+    }
+
+    .movie {
+        max-width: 800px;
+        border-radius: 5px;
+        display: flex;
+        box-shadow: 0 5px 20px 10px rgba(0, 0, 0, .2);
+        overflow: hidden;
+        margin-left: 346px;
+    }
+
+    .movie__hero {
+        flex: 0 0 45%;
+    }
+
+    .movie__img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .movie__content {
+        background-color: aliceblue;
+        flex: 1;
+        padding: 35px 30px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .movie__price {
+        background: linear-gradient(to bottom, #A9C9FF 0%, #FFBBEC 100%);
+        flex: 0 0 50px;
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        color: rgb(255, 255, 255);
+        writing-mode: vertical-lr;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .movie__title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .heading__primary {
+        font-size: 16px;
+        margin-right: auto;
+        color: royalblue;
+    }
+
+    .fa-fire {
+        color: salmon;
+    }
+
+    .movie__tag {
+        font-size: 10px;
+        color: #fff;
+        padding: 2px 7px;
+        border-radius: 100px;
+        margin-right: 8px;
+        display: block;
+        text-transform: uppercase;
+    }
+
+    .movie__tag--1 {
+        background-color: #FFBBEC;
+    }
+
+    .movie__tag--2 {
+        background-color: #FFBBEC;
+    }
+
+    .movie__description {
+        font-size: 14px;
+        color: #000;
+    }
+
+    .movie__details {
+        display: flex;
+        margin: auto;
+    }
+
+    .movie__detail {
+        font-size: 13px;
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .mar {
+        margin-top: 30px;
+    }
+
+    .icons i {
+        margin-right: 3px;
+        font-size: 18px;
+    }
+
+    .icons-red {
+        color: salmon;
+    }
+
+    .icons-grey {
+        color: grey;
+    }
+
+    .icons-yellow {
+        color: rgb(190, 190, 71);
+    }
+</style>
+
+
+<figure class="movie">
+    <div class="movie__hero">
+        <img src="{{movie.ImageURL}}" alt="Rambo" class="movie__img">
+    </div>
+    <div class="movie__content">
+        <h4 style="color: #223e6f; font-style: bold;">Movie Name</h4>
+        <div class="movie__title">
+            <h1 class="heading__primary"> {{movie.Name}}<i class="fas fa-fire"></i></h1>
+            <ng-container >
+                <span class="movie__tag movie__tag--1">{{categoryName}}</span>
+              </ng-container>
+          
+            <p class="card-text ">
+
+            
+                    <b style="color: #000;">Status:
+                        
+                        <ng-container *ngIf="isExpired(movie)">
+                          <span class="badge bg-danger text-white">EXPIRED</span>
+                        </ng-container>
+                        <ng-container *ngIf="isUpcoming(movie)">
+                          <span class="badge bg-primary text-white">UPCOMING</span>
+                        </ng-container>
+                        <ng-container *ngIf="isAvailable(movie)">
+                            <span class="badge bg-success text-white">AVAILABLE</span>
+                          </ng-container>
+                      </b>
+               
+            </p>
+            <p class="card-text ">
+
+         
+              
+           
+
+        </div>
+        <h4 style="color: #223e6f; font-style: bold;">Discription</h4>
+
+        <p class="movie__description">
+         {{movie.Description}}
+        </p>
+        <div class="movie__details">
+          
+            <p class="movie__detail"><span class="icons icons-grey"><i class="fas fa-clock"></i><b>Start Date: </b> {{movie.StartDate | date:'dd MMM yy'}}</span></p>
+            <p class="movie__detail"><span class="icons icons-grey"><i class="fas fa-clock"></i><b>End Date: </b> {{movie.EndDate | date:'dd MMM yy'}}</span></p>
+            <p class="movie__detail">
+               
+            </p>  
+            <p>  </p>
+            
+          
+            <div class="movie__details">
+                <div>
+                    <h5 style="color: #223e6f; font-style: bold;">Movie Producer</h5>
+                    <img class="rounded-circle" src="{{producer.ProfilePictureURL}}" alt="Rambo" style="width: 100px; height: 100px">
+                </div>
+                <div>
+                    <h5 style="color: #223e6f; font-style: bold;">Cinema</h5>
+
+                    <img class="rounded-circle" src="{{cinema.Logo}}" alt="Rambo" style="width: 100px; height: 100px">
+                </div>
+               
+              </div>
+             
+        </div>
+        <div class="movie__details">
+            <div *ngFor="let item of actors">
+                <h5 style="color: #223e6f; font-style: bold;">Stars Of the Movie</h5>
+                <img class="rounded-circle" src="{{item.ProfilePictureURL}}" alt="Rambo" style="width: 100px; height: 100px">
+            </div>
+        </div>
+        <button  (click)="goBack()"type="button" class="btn btn-warning">Go To List</button>
+
+          </div>
+
+</figure>
+
+<div class="col-md-3">
+  </div> -->
+
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+     body {
+           
+        background: url('../Images/body-bg.gif');
+        background:black;
+        color:black;
+        font-family: "Roboto", sans-serif;
+
+    }
+
+    .movie {
+        max-width: 800px;
+        border-radius: 5px;
+        display: flex;
+        box-shadow: 0 5px 20px 10px rgba(0, 0, 0, .2);
+        overflow: hidden;
+        margin-left: 346px;
+    }
+
+    .movie__hero {
+        flex: 0 0 45%;
+    }
+
+    .movie__img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .movie__content {
+        background-color: aliceblue;
+        flex: 1;
+        padding: 35px 30px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .movie__price {
+        background: linear-gradient(to bottom, #A9C9FF 0%, #FFBBEC 100%);
+        flex: 0 0 50px;
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        color: rgb(255, 255, 255);
+        writing-mode: vertical-lr;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .movie__title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .heading__primary {
+        font-size: 14px;
+        font-family: bold;
+        margin-right: auto;
+        color: rgb(4, 6, 11);
+    }
+
+    .fa-fire {
+        color: salmon;
+    }
+
+    .movie__tag {
+        font-size: 10px;
+        color: #fff;
+        padding: 2px 7px;
+        border-radius: 100px;
+        margin-right: 8px;
+        display: block;
+        text-transform: uppercase;
+    }
+
+    .movie__tag--1 {
+        background-color: #e368c0;
+        width: 30%;
+    }
+
+    .movie__tag--2 {
+        background-color: #eb71c8;
+    }
+
+    .movie__description {
+        font-size: 16px;
+        color: #000;
+        font-family: bold;
+    }
+
+    .movie__details {
+        display: flex;
+        margin: auto;
+    }
+
+    .movie__detail {
+        font-size: 13px;
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .mar {
+        margin-top: 30px;
+    }
+
+    .icons i {
+        margin-right: 3px;
+        font-size: 18px;
+    }
+
+    .icons-red {
+        color: salmon;
+    }
+
+    .icons-grey {
+        color: grey;
+    }
+
+    .icons-yellow {
+        color: rgb(190, 190, 71);
+    }
+</style>
+
+
+<figure class="movie" >
+    <div class="movie__hero" >
+        <img src="{{movie.ImageURL}}" alt="Rambo" class="movie__img">
+    </div>
+    <div class="movie__content"  
+    >
+        <h4 >Movie Name</h4>
+        <div class="movie__description ">{{movie.Name}} <i class="fas fa-fire"></i>
+            <!-- "movie__title" style="font-family: bold; font-size: 40px;
+            <h1 class=" movie__description"> {{movie.Name}}</h1> -->
+            <!-- heading__primary    <i class="fas fa-fire"></i>-->
+            <ng-container >
+                <span class="movie__tag movie__tag--1">{{categoryName}}</span>
+              </ng-container>
+          
+            <p class="card-text ">
+
+            
+                    <b style="color: #000;">Status:
+                        
+                        <ng-container *ngIf="isExpired(movie)">
+                          <span class="badge bg-danger text-white">EXPIRED</span>
+                        </ng-container>
+                        <ng-container *ngIf="isUpcoming(movie)">
+                          <span class="badge bg-primary text-white">UPCOMING</span>
+                        </ng-container>
+                        <ng-container *ngIf="isAvailable(movie)">
+                            <span class="badge bg-success text-white">AVAILABLE</span>
+                          </ng-container>
+                      </b>
+               
+            </p>
+            <p class="card-text ">
+
+         
+              
+           
+
+        </div>
+        <h4 >Discription</h4>
+
+        <p class="movie__description">
+         {{movie.Description}}
+
+         <div class="movie__details">
+            <div>
+                <h4 > Producer</h4>
+                <img class="rounded-circle" src="{{producer.ProfilePictureURL}}" alt="Rambo" style="width: 100px; height: 100px">
+            </div>
+            <div>
+                
+                <h4 style="margin-left: 10px; margin-bottom: 10px;">Cinema</h4>
+
+                <img class="rounded-circle" src="{{cinema.Logo}}" alt="Rambo" style="width: 100px; height: 100px;margin-left: 5px;" >
+            </div>
+           
+            <div class="movie__details">
+                <div *ngFor="let item of actors">
+                    <h4 style="margin-bottom: 10px;margin-left: 5px;padding-right: 30px;">Actors</h4>
+                    <img class="rounded-circle" src="{{item.ProfilePictureURL}}" alt="Rambo" style="width: 100px; height: 100px">
+                </div>
+            </div>
+         
+    </div>
+        
+        <div class="movie__details">
+          
+            <p  class="movie__detail"><span class="icons icons-grey" style="color: #000;"><i class="fas fa-clock"></i><b >Start Date: </b> {{movie.StartDate | date:'dd MMM yy'}}</span></p>
+            <p class="movie__detail"><span class="icons icons-grey" style="color: #000;"><i class="fas fa-clock"></i><b>End Date: </b> {{movie.EndDate | date:'dd MMM yy'}}</span></p>
+            <p class="movie__detail">
+               
+            </p>  
+           
+          
+        </div>
+        <button (click)="goBack()" class='glowing-btn'><span class='glowing-txt'>GO To<span class='faulty-letter'></span>List</span></button>
+        <!-- <button style="width: 80px; height: 50px; margin-left: 150px;" (click)="goBack()"type="button" class="btn bg-primary">Go To List</button> -->
+
+    </div>
+
+</figure>
+
+<div class="col-md-3">
+  </div>
+      <br><br>
+      <br>
+
+      
+
+       
